@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join Our Platforms • THE SWARUP NETWORK</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0b0f1a;
+      --card:#131a2a;
+      --text:#ffffff;
+      --muted:#9aa4bf;
+      --accent:#ff9800;
+      --accent2:#ff5722;
+      --glass:rgba(255,255,255,0.08);
+    }
+
+    body.light{
+      --bg:#f2f4f8;
+      --card:#ffffff;
+      --text:#000000;
+      --muted:#666;
+      --accent:#ff5722;
+      --accent2:#ff9800;
+      --glass:rgba(0,0,0,0.05);
+    }
+
+    body{
+      min-height:100vh;
+      background: radial-gradient(circle at top,var(--accent2),transparent 40%),var(--bg);
+      color:var(--text);
+      font-family:'Poppins',sans-serif;
+      transition:0.4s;
+      padding:0;
+      margin:0;
+    }
+
+    .header{
+      text-align:center;
+      padding:25px 15px;
+      background:linear-gradient(45deg,var(--accent),var(--accent2));
+      color:#fff;
+      font-weight:700;
+      font-size:22px;
+      letter-spacing:1px;
+    }
+
+    .platforms{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+      gap:25px;
+      padding:30px;
+      max-width:1000px;
+      margin:0 auto;
+    }
+
+    .platform-card{
+      background:var(--card);
+      border-radius:18px;
+      padding:20px;
+      text-align:center;
+      transition:0.3s;
+      cursor:pointer;
+    }
+
+    .platform-card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 15px 30px rgba(0,0,0,0.4);
+    }
+
+    .platform-card img{
+      width:60px;
+      height:60px;
+      object-fit:cover;
+      border-radius:12px;
+      margin-bottom:10px;
+    }
+
+    .platform-card p{
+      margin:0;
+      font-size:14px;
+      font-weight:500;
+      color:var(--text);
+    }
+
+    .footer{
+      text-align:center;
+      padding:20px;
+      background:var(--card);
+      color:var(--muted);
+      font-size:13px;
+      margin-top:30px;
+    }
+
+    .btn-home{
+      display:inline-block;
+      margin-top:20px;
+      padding:12px 25px;
+      border:none;
+      border-radius:30px;
+      background:linear-gradient(45deg,var(--accent),var(--accent2));
+      color:#fff;
+      font-weight:600;
+      text-decoration:none;
+      transition:0.3s;
+    }
+
+    .btn-home:hover{
+      transform:translateY(-3px);
+      box-shadow:0 15px 30px rgba(0,0,0,0.4);
+    }
+
+    .theme-toggle{
+      position:fixed;
+      top:18px;
+      right:18px;
+      background:var(--card);
+      border-radius:50%;
+      width:42px;
+      height:42px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      transition:0.3s;
+      z-index:100;
+    }
+    .theme-toggle:hover{ transform:rotate(20deg); }
+  </style>
+</head>
+<body>
+
+<div class="theme-toggle" onclick="toggleTheme()">
+  <i class="bi bi-moon-stars"></i>
+</div>
+
+<div class="header">Join Our Platforms • THE SWARUP NETWORK</div>
+
+<div class="platforms">
+
+  <!-- YouTube Channels -->
+  <a href="https://youtube.com/@theswarupnetwork?si=VSt68iGBVAOozCR7" target="_blank" class="platform-card">
+    <img src="data:image/png;base64,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" alt="The Swarup Network YT">
+    <p>The Swarup Network YT</p>
+  </a>
+
+  <a href="https://youtube.com/@swarupffpanel" target="_blank" class="platform-card">
+    <img src="data:image/png;base64,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" alt="Swarup FF Panel YT">
+    <p>Swarup FF Panel YT</p>
+  </a>
+
+  <a href="https://youtube.com/@swaruppremiumstore" target="_blank" class="platform-card">
+    <img src="data:image/png;base64,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" alt="Swarup Premium Store YT">
+    <p>Swarup Premium Store YT</p>
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/darkside_emptysoul?igsh=MWVweWYwdXJsMzE1ZA==" target="_blank" class="platform-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram">
+    <p>Instagram</p>
+  </a>
+
+  <!-- WhatsApp -->
+  <a href="https://whatsapp.com/channel/0029Vb57GaO2UPBMVFAVc23b" target="_blank" class="platform-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    <p>WhatsApp</p>
+  </a>
+
+  <!-- Telegram Channels -->
+  <a href="https://t.me/swarupmods" target="_blank" class="platform-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram ">
+    <p>Telegram FF13</p>
+  </a>
+
+  <a href="https://t.me/SWARUPFF13" target="_blank" class="platform-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Swarup Network">
+    <p>Telegram Swarup Network</p>
+  </a>
+
+  <!-- Additional Swarup Modas Arena -->
+  <a href="https://t.me/swarupmods" target="_blank" class="platform-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Swarup Mods Arena">
+    <p>Swarup Modas Arena</p>
+  </a>
+
+</div>
+
+<div class="text-center">
+  <a href="home.html" class="btn-home">Back to Home</a>
+</div>
+
+<div class="footer">© 2025 THE SWARUP NETWORK</div>
+
+<script>
+  function toggleTheme(){
+    document.body.classList.toggle('light');
+  }
+
+  function speak(text){
+    let msg = new SpeechSynthesisUtterance(text);
+    msg.rate = 0.9;
+    speechSynthesis.speak(msg);
+  }
+
+  // Example: Voice when page loaded
+  window.onload = () => {
+    speak('Welcome! Join our platforms to stay connected.');
+  }
+</script>
+
+</body>
+</html>
